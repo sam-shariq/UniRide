@@ -15,6 +15,10 @@ export default function Home() {
       <a
         href="/fares"
         className="block text-center bg-blue-600 text-white py-3 rounded-lg"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = '/fares';
+        }}
       >
         Check Smart Fares
       </a>
