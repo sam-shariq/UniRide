@@ -1,7 +1,11 @@
-export default function LocationInput({ label, placeholder }) {
+export default function LocationInput({
+  label,
+  placeholder,
+  value,
+  onChange,
+}) {
   return (
     <div className="w-full flex flex-col gap-2 items-center">
-      
       <label className="text-white font-medium">
         {label}
       </label>
@@ -9,6 +13,8 @@ export default function LocationInput({ label, placeholder }) {
       <input
         type="text"
         placeholder={placeholder}
+        value={value}
+        onChange={e => onChange(e.target.value)}
         className="
           bg-white/80
           placeholder-gray-500
