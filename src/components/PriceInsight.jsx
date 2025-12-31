@@ -1,14 +1,14 @@
-export default function PriceInsight() {
-    return (
-      <div className="bg-yellow-50 bg-white/90 border border-yellow-300 p-4 rounded-xl">
-        <h4 className="font-semibold text-yellow-800">Price Insight</h4>
-        <p className="text-sm text-yellow-700 mt-1">
-          Current fares are higher than usual due to congestion.
-        </p>
-        <p className="text-sm mt-2">
-          💡 Form a group to save up to <b>35%</b>
-        </p>
-      </div>
-    );
-  }
-  
+export default function PriceInsight({ insight, reason }) {
+  const map = {
+    low: "🟢 Prices are lower than usual",
+    medium: "🟡 Prices are normal for this time",
+    high: "🔴 Prices are high due to traffic",
+  };
+
+  return (
+    <div className="text-white/80 text-sm">
+      <p>{map[insight]}</p>
+      <p className="text-xs text-white/60">{reason}</p>
+    </div>
+  );
+}
